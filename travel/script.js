@@ -1,8 +1,17 @@
-console.log (  
-    `1.The layout is valid +10;/n 
-    2.Semantic layout +20 ; /n
-    3.Layout corresponds to the layout +30; /n
-    4.Css requirements + 10; /n
-    5.Interactivity implemented through Css; +20 /n
-                Total score : 90 ;`
-    )
+let burgerMenu = document.querySelector('.burger-menu ');
+let closeButton = document.querySelector('.close-menu');
+let menu = document.querySelector('.header-menu-mobile');
+let links = document.querySelectorAll('.header-menu-mobile a')
+
+burgerMenu.addEventListener('click', function(){
+    menu.classList.add('visible');
+});
+
+closeButton.addEventListener('click', function(){
+    menu.classList.remove('visible')
+})
+links.forEach(function (link) {
+    link.addEventListener('click', function(){
+        menu.classList.remove('visible')
+    })
+})
